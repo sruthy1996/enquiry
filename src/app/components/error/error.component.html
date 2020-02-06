@@ -1,0 +1,5 @@
+
+<div *ngIf="hasError(field)">
+    <p *ngIf="get(field).errors.required">{{field}} is required</p>
+    <p *ngIf="get(field).errors.minlength">{{field}} should be atleast 10 characters</p>
+</div>

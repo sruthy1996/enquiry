@@ -1,0 +1,30 @@
+
+<form [formGroup]="enquiryForm" (ngSubmit)="add()">
+    <div>
+        <input placeholder="firstName" formControlName="firstName" name="firstName" type="text">
+        <app-error [formGroup]="enquiryForm" field= "firstName"></app-error>
+    </div>
+
+  <div>
+        <input placeholder="lastName" formControlName="lastName" name="lastName" type="text">
+        <app-error [formGroup]="enquiryForm" field= "lastName"></app-error>
+    </div>
+
+     <div>
+        <input placeholder="email" formControlName="email" name="email" type="email">
+        <app-error [formGroup]="enquiryForm" field= "email"></app-error>
+    </div>
+
+    <div>
+        <input placeholder="phone" formControlName="phone" name="phone" type="text">
+        <app-error [formGroup]="enquiryForm" field= "phone"></app-error>
+    </div>
+
+    <div>
+        <input placeholder="comment" formControlName="comment" name="comment" type="text">
+        <app-error [formGroup]="enquiryForm" field= "comment"></app-error>
+    </div>
+
+
+    <button type="submit" [disabled]="!enquiryForm.valid">Add</button>
+</form>

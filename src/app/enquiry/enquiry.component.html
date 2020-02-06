@@ -1,0 +1,34 @@
+<h1>{{title}}</h1>
+<button (click)="addEnquiry()">Add Enquiry</button>
+<form [formGroup]="searchForm" (ngSubmit)="search()">
+ <div>
+  <input placeholder="firstName" formControlName="firstName" name="firstName" type="text">
+  <button type="submit" [disabled]="!searchForm.valid">Search</button>
+ </div>
+</form>
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>firstName</th>
+            <th>lastName</th>
+            <th>email</th>
+            <th>phone</th>
+            <th>comment</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngIf="enquiries.length==0">No enquiries..</tr>
+        <tr *ngFor="let enquiry of enquiries; let i=index">
+            <td>{{enquiry._id}}</td>
+            <td>{{enquiry.firstName}}</td>
+            <td>{{enquiry.lastName}}</td>
+            <td>{{enquiry.email}}</td>
+            <td>{{enquiry.phone}}</td>
+            <td>{{enquiry.comment}}</td>
+            
+        </tr>
+    </tbody>
+</table>
+
+
